@@ -15,11 +15,11 @@ func (m *commandModule) Help() {
 	m.Example = "도움말"
 	m.IsRequireAdminPermission = false
 	m.CommandFunc = func(session *discordgo.Session, message *discordgo.MessageCreate, args []string) {
-		session.ChannelMessageSendEmbed(message.ChannelID, helpEmbedGenerate())
+		session.ChannelMessageSendEmbed(message.ChannelID, generateHelpEmbed())
 	}
 }
 
-func helpEmbedGenerate() *discordgo.MessageEmbed {
+func generateHelpEmbed() *discordgo.MessageEmbed { // WIP
 	embed := &discordgo.MessageEmbed{
 		Title:       "도움말",
 		Description: "명령어 도움말을 확인합니다.",
